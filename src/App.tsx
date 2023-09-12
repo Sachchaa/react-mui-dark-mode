@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
+import {
+  AppBar,
+  Box,
+  Container,
+  IconButton,
+  Toolbar,
+  Tooltip,
+  useTheme,
+} from "@mui/material";
+import { useContext, useMemo } from "react";
+import { ThemeContext } from "./theme";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = useTheme();
+  const { switchColorMode } = useContext(ThemeContext);
+  const activateName = useMemo(
+    () => (theme.palette.mode === "dark" ? "Light" : "Dark"),
+    [theme]
+  );
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container
+        maxWidth={false}
+        sx={{
+          padding: "0px !important",
+          bgcolor: "background.default",
+          color: "text.primary",
+        }}
+      >
+        <AppBar position="static">
+          <Toolbar>
+            <Box flex={1}></Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title={`Activate ${activateName} Mode`}>
+                <IconButton
+                  onClick={switchColorMode}
+                  sx={{
+                    p: 1,
+                    border: `1px ${theme.palette.text.disabled} solid`,
+                  }}
+                  size="large"
+                  color="inherit"
+                >
+                  {theme.palette.mode === "dark" ? (
+                    <LightModeOutlined />
+                  ) : (
+                    <DarkModeOutlined color="action" />
+                  )}
+                </IconButton>
+              </Tooltip>
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
