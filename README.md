@@ -14,7 +14,7 @@ $ git clone https://github.com/Sachchaa/react-mui-dark-mode
 Change to the project directory
 
 ```javascript
-$ cd react-theme-toggle-app
+$ cd react-mui-dark-mode
 
 ```
 
