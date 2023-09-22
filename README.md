@@ -4,21 +4,21 @@ This is a simple React application that demonstrates how to implement a theme to
 
 ## Installation
 
-Clone the repository
+Clone the repository.
 
 ```javascript
 $ git clone https://github.com/Sachchaa/react-mui-dark-mode
 
 ```
 
-Change to the project directory
+Change to the project directory.
 
 ```javascript
 $ cd react-mui-dark-mode
 
 ```
 
-Install the dependencies
+Install the dependencies.
 
 ```javascript
 $ npm install
@@ -27,7 +27,7 @@ $ npm install
 
 ## Usage
 
-Start the application
+Start the application.
 
 ```javascript
 $ npm run dev
