@@ -25,11 +25,15 @@ function App() {
         maxWidth={false}
         sx={{
           padding: "0px !important",
-          bgcolor: "background.default",
-          color: "text.primary",
         }}
       >
-        <AppBar position="static">
+        <AppBar
+          position="static"
+          sx={{
+            padding: "0px !important",
+            bgcolor: theme.palette.background.default,
+          }}
+        >
           <Toolbar>
             <Box flex={1}></Box>
             <Box sx={{ flexGrow: 0 }}>

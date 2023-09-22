@@ -5,13 +5,13 @@ import {
 } from "@mui/material/styles";
 import { ReactNode, createContext, useMemo, useState } from "react";
 
-interface ThemeContextType {
+type ThemeContextType = {
   switchColorMode: () => void;
-}
+};
 
-interface ThemeProviderProps {
+type ThemeProviderProps = {
   children: ReactNode;
-}
+};
 
 export const ThemeContext = createContext<ThemeContextType>({
   switchColorMode: () => {},
